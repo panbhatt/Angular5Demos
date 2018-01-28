@@ -2,7 +2,7 @@
 
 **This Repository consists of all the Angular 5 samples that i have coded during my angular 5 study.**
 
-- 
+
 1. **Angular5-hello-world** : A Simple Angular 5 hello World project. 
 2. **Angular5-reddit** : A Simple Reddit clone ( very simple one where you are submitting the link and adding the LINK in a LIST). 
 3. **Angular5-routes** : Angular 5 Router implementation. 
