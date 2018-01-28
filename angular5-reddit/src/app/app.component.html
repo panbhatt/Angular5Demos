@@ -1,0 +1,37 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+
+  <form class="ui large form segment" style="text-align:left">
+    <h3 class="ui header"> Add a link </h3>
+
+    <div class="field">
+      <label for="title">Title</label>
+      <input name="title" #newTitle>
+    </div>
+    <div class="field">
+      <label for="desc">Description</label>
+      <input name="desc" #newDesc>
+    </div>
+    <button (click)="addArticle(newTitle,newDesc)" class="ui positive center floated button">Add Link</button>
+  </form>
+
+  <div class="ui grid posts"></div>
+  <div *ngFor="let arti of articles">
+    <app-article [title]="arti.title" [desc]="arti.desc" (onArticleClicked)="onArticleSelect(arti.title)"></app-article>
+  </div>
+  <div>
+  </div>
+
+
+  <h2>Here are some links to help you start: </h2>
+  <ul>
+    <li>
+      <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
+    </li>
+    <li>
+      <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
+    </li>
+    <li>
+      <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
+    </li>
+  </ul>

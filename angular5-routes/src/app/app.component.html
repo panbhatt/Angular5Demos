@@ -1,0 +1,16 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div>
+  <mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+    <h1 class="example-app-name">Angular 5 Router Demo </h1>
+  </mat-toolbar>
+
+
+  <nav mat-tab-nav-bar>
+    <a mat-tab-link *ngFor="let link of navLinks" [routerLink]="link.path" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">
+        {{link.label}}
+      </a>
+  </nav>
+
+  <router-outlet></router-outlet>
+</div>

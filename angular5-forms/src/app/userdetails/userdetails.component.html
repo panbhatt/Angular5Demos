@@ -1,0 +1,15 @@
+<div>
+  <h1>Random user Details :</h1>
+  <div *ngIf="loading == false">
+    <div *ngFor="let post of postsData; let cur=index">
+      {{ cur }}
+        <div class="box">
+          {{ post | json}}
+        </div>
+    </div>
+    
+  </div>
+  <div *ngIf="loading">
+      Post Data is  loading .... 
+    </div>
+</div>
