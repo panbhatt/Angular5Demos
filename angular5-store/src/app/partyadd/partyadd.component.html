@@ -1,0 +1,8 @@
+<div>
+  <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit(reactiveForm.value)">
+    <mat-form-field c>
+      <input type="text" matInput placeholder="party name" value="Party Name" name="partyName" [formControl]="reactiveForm.controls['partyName']">
+    </mat-form-field>
+    <button mat-raised-button color="primary">Add Party</button>
+  </form>
+</div>

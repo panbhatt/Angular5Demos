@@ -1,0 +1,36 @@
+<div>
+  <div> Total Parties {{ partiesCount$ | async }} </div>
+    <!--<mat-table #table [dataSource]="dataSource$"> -->
+
+        <mat-table #table [dataSource]="partiesList$">
+  
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+  
+      <!-- Position Column -->
+      <ng-container matColumnDef="userName">
+        <mat-header-cell *matHeaderCellDef> Username </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.userName}} </mat-cell>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="isOnTime">
+        <mat-header-cell *matHeaderCellDef> On Time </mat-header-cell>
+        <mat-cell *matCellDef="let element"> 
+            <mat-checkbox [checked]="element.isOnTime" (change)="handleIsOnTimeToggle($event, element.id )"> </mat-checkbox>
+        </mat-cell>
+      </ng-container>
+  
+      <!-- Weight Column -->
+      <ng-container matColumnDef="isConfirmed">
+        <mat-header-cell *matHeaderCellDef> Is Confirmed </mat-header-cell>
+        <mat-cell *matCellDef="let element"> 
+            <mat-checkbox [checked]="element.isConfirmed" (change)="handleIsConfirmedToggle(  $event, element.id )"> </mat-checkbox>
+        </mat-cell>
+      </ng-container>
+      
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
